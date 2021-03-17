@@ -13,12 +13,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [PFObject]()
+    var posts = [PFObject]();
+    var numOfPosts = Int()
+    
+    let myRefreshControl = UIRefreshControl();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self;
         tableView.dataSource = self;
+        
+        myRefreshControl.addTarget(self, action: #selector(viewDidAppear), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
         // Do any additional setup after loading the view.
     }
     
@@ -27,7 +34,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let query = PFQuery(className: "Posts");
         query.includeKey("author");
-        query.limit = 20;
+        numOfPosts = 5;
+        query.limit = numOfPosts;
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData();
+                self.myRefreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    func loadMorePosts() {
+        let query = PFQuery(className: "Posts");
+        query.includeKey("author");
+        numOfPosts = numOfPosts + 10;
+        query.limit = numOfPosts;
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -38,14 +61,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        print("Posts count: \(posts.count)")
         return posts.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell;
-        let post = posts[indexPath.row];
+        print("Row:\(indexPath.row)");
+        let rowNum = posts.count - indexPath.row - 1;
+        print("Row Number is:\(rowNum)");
+        let post = posts[rowNum];
         let user = post["author"] as! PFUser;
         cell.usernameLabel.text = user.username;
         cell.captionLabel.text = post["caption"] as? String;
@@ -57,6 +81,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.photoView.af.setImage(withURL: url);
         
         return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == posts.count {
+            loadMorePosts();
+        }
     }
     /*
     // MARK: - Navigation
