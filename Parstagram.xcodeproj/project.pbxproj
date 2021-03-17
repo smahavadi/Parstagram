@@ -20,6 +20,7 @@
 		E90EC50F2602205F004E8A67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EC50E2602205F004E8A67 /* LoginViewController.swift */; };
 		E90EC5142602213A004E8A67 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EC5132602213A004E8A67 /* FeedViewController.swift */; };
 		E90EC51926022D7A004E8A67 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EC51826022D7A004E8A67 /* CameraViewController.swift */; };
+		E9519D54260286DC00635C3E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9519D53260286DC00635C3E /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E90EC50E2602205F004E8A67 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E90EC5132602213A004E8A67 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E90EC51826022D7A004E8A67 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E9519D53260286DC00635C3E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				E90EC50E2602205F004E8A67 /* LoginViewController.swift */,
 				E90EC5132602213A004E8A67 /* FeedViewController.swift */,
 				E90EC51826022D7A004E8A67 /* CameraViewController.swift */,
+				E9519D53260286DC00635C3E /* PostTableViewCell.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				E90EC4D02601904C004E8A67 /* AppDelegate.swift in Sources */,
 				E90EC5142602213A004E8A67 /* FeedViewController.swift in Sources */,
 				E90EC4D22601904C004E8A67 /* SceneDelegate.swift in Sources */,
+				E9519D54260286DC00635C3E /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
