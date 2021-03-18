@@ -34,7 +34,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let query = PFQuery(className: "Posts");
         query.includeKey("author");
-        numOfPosts = 5;
+        numOfPosts = 10;
         query.limit = numOfPosts;
         
         query.findObjectsInBackground { (posts, error) in
@@ -49,7 +49,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadMorePosts() {
         let query = PFQuery(className: "Posts");
         query.includeKey("author");
-        numOfPosts = numOfPosts + 10;
+        numOfPosts = numOfPosts + 5;
         query.limit = numOfPosts;
         
         query.findObjectsInBackground { (posts, error) in
@@ -72,6 +72,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = posts[rowNum];
         let user = post["author"] as! PFUser;
         cell.usernameLabel.text = user.username;
+        cell.headerUserLabel.text = user.username;
         cell.captionLabel.text = post["caption"] as? String;
         
         let imageFile = post["image"] as! PFFileObject;

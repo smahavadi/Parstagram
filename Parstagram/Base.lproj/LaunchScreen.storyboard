@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,15 +16,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="wEE-lf-uEw">
-                                <rect key="frame" x="125" y="379.5" width="164" height="137"/>
+                                <rect key="frame" x="159.5" y="395" width="95" height="106"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="137" id="M9U-Hx-82D"/>
-                                    <constraint firstAttribute="width" constant="164" id="hS2-WW-UuZ"/>
+                                    <constraint firstAttribute="height" constant="106" id="JBE-al-55W"/>
+                                    <constraint firstAttribute="width" constant="95" id="LYR-0f-frL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wEE-lf-uEw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="D9p-iP-fbn"/>
                             <constraint firstItem="wEE-lf-uEw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n0C-Wh-3kF"/>
@@ -39,8 +38,5 @@
     </scenes>
     <resources>
         <image name="Icon-60" width="60" height="60"/>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
