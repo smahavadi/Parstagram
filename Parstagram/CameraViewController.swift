@@ -13,10 +13,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
+    var currentUser:String = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let defaults = UserDefaults.standard;
+        currentUser = defaults.object(forKey: "currentUser") as! String
         // Do any additional setup after loading the view.
     }
     
@@ -25,6 +28,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post["caption"] = commentField.text!
         post["author"] = PFUser.current()!
+        //post["authorId"] = currentUser;
         
         let imageData = imageView.image!.pngData();
         let file = PFFileObject(data: imageData!);

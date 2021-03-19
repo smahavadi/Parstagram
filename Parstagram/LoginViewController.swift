@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,7 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "successSegue", sender: nil)
                 print("Successfully signed up");
+                self.defaults.setValue(user.username, forKey: "currentUser");
             } else {
                 print("Error in signing up: \(error?.localizedDescription)")
             }
@@ -42,6 +45,7 @@ class LoginViewController: UIViewController {
             if (user != nil) {
                 self.performSegue(withIdentifier: "successSegue", sender: nil)
                 print("Successfully logged in");
+                self.defaults.setValue(username, forKey: "currentUser");
             } else {
                 print("Error in logging in: \(error?.localizedDescription)")
             }
@@ -55,7 +59,8 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+*/
 
 }

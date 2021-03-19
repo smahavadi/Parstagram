@@ -34,7 +34,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let query = PFQuery(className: "Posts");
         query.includeKey("author");
-        numOfPosts = 10;
+        numOfPosts = 20;
         query.limit = numOfPosts;
         
         query.findObjectsInBackground { (posts, error) in
@@ -66,9 +66,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell;
-        print("Row:\(indexPath.row)");
         let rowNum = posts.count - indexPath.row - 1;
-        print("Row Number is:\(rowNum)");
         let post = posts[rowNum];
         let user = post["author"] as! PFUser;
         cell.usernameLabel.text = user.username;

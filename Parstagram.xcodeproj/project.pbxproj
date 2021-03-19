@@ -21,6 +21,8 @@
 		E90EC5142602213A004E8A67 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EC5132602213A004E8A67 /* FeedViewController.swift */; };
 		E90EC51926022D7A004E8A67 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EC51826022D7A004E8A67 /* CameraViewController.swift */; };
 		E9519D54260286DC00635C3E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9519D53260286DC00635C3E /* PostTableViewCell.swift */; };
+		E9519D882603CE3300635C3E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9519D872603CE3300635C3E /* ProfileViewController.swift */; };
+		E9519DA52603D83700635C3E /* MyPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9519DA42603D83700635C3E /* MyPostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E90EC5132602213A004E8A67 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E90EC51826022D7A004E8A67 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E9519D53260286DC00635C3E /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		E9519D872603CE3300635C3E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E9519DA42603D83700635C3E /* MyPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				E90EC5132602213A004E8A67 /* FeedViewController.swift */,
 				E90EC51826022D7A004E8A67 /* CameraViewController.swift */,
 				E9519D53260286DC00635C3E /* PostTableViewCell.swift */,
+				E9519D872603CE3300635C3E /* ProfileViewController.swift */,
+				E9519DA42603D83700635C3E /* MyPostCell.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -419,8 +425,10 @@
 				E90EC51926022D7A004E8A67 /* CameraViewController.swift in Sources */,
 				E90EC4D02601904C004E8A67 /* AppDelegate.swift in Sources */,
 				E90EC5142602213A004E8A67 /* FeedViewController.swift in Sources */,
+				E9519D882603CE3300635C3E /* ProfileViewController.swift in Sources */,
 				E90EC4D22601904C004E8A67 /* SceneDelegate.swift in Sources */,
 				E9519D54260286DC00635C3E /* PostTableViewCell.swift in Sources */,
+				E9519DA52603D83700635C3E /* MyPostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
