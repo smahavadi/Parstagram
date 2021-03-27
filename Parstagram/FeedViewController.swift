@@ -46,6 +46,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
     func loadMorePosts() {
         let query = PFQuery(className: "Posts");
         query.includeKey("author");
@@ -86,6 +90,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row + 1 == posts.count {
             loadMorePosts();
         }
+    }
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = loginViewController
     }
     /*
     // MARK: - Navigation
